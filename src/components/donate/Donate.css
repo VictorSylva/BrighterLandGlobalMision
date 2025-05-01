@@ -1,0 +1,142 @@
+.donate-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.donate-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.donate-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.donate-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.donation-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.donation-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.donation-card:hover {
+  transform: translateY(-5px);
+}
+
+.donation-card h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.donation-amount {
+  font-size: 2rem;
+  color: #3498db;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.donation-description {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+.donation-features {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.donation-features li {
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.donation-features li:before {
+  content: "✓";
+  color: #27ae60;
+  position: absolute;
+  left: 0;
+}
+
+.donate-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.donate-btn:hover {
+  background-color: #2980b9;
+}
+
+.other-ways {
+  text-align: center;
+}
+
+.other-ways h2 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.support-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.support-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.support-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.support-card p {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+}
+
+.support-btn {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.support-btn:hover {
+  background-color: #219653;
+} 

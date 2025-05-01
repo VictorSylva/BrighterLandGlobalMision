@@ -160,3 +160,13 @@ p {
     height: 80vh;
   }
 }
+
+.App {
+  padding-top: 80px;
+}
+
+@media (max-width: 960px) {
+  .App {
+    padding-top: 80px;
+  }
+}

@@ -1,0 +1,69 @@
+.our-impact-section {
+  position: relative;
+  padding: 4rem 1rem 3rem 1rem;
+  border-radius: 12px;
+  max-width: 1200px;
+  margin: 2rem auto;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.our-impact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+.our-impact-subtitle {
+  color: #fff;
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+.our-impact-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.our-impact-card {
+  background: transparent;
+  border-radius: 12px;
+  box-shadow: none;
+  padding: 2.2rem 2.5rem 1.5rem 2.5rem;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.our-impact-icon {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+.our-impact-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+.our-impact-label {
+  font-size: 1.1rem;
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.3);
+}
+@media (max-width: 900px) {
+  .our-impact-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .our-impact-card {
+    min-width: 180px;
+    width: 90%;
+  }
+} 

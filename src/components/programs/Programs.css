@@ -1,0 +1,134 @@
+.programs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.programs-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.programs-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.programs-header p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.program-card {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid #eee;
+  padding: 2rem;
+}
+
+.program-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #3498db;
+  transition: width 0.3s ease;
+  pointer-events: none;
+}
+
+.program-card:nth-child(2)::before {
+  background: #2ecc71;
+}
+
+.program-card:nth-child(3)::before {
+  background: #f1c40f;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card:hover::before {
+  width: 100%;
+  opacity: 0.5;
+}
+
+.program-card:nth-child(1):hover::before {
+  background: rgba(52, 152, 219, 0.8);
+}
+
+.program-card:nth-child(2):hover::before {
+  background: rgba(46, 204, 113, 0.8);
+}
+
+.program-card:nth-child(3):hover::before {
+  background: rgba(241, 196, 15, 0.8);
+}
+
+.program-card h2 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.program-description {
+  color: #7f8c8d;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.program-details {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.program-details li {
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.program-details li:before {
+  content: "✓";
+  color: #27ae60;
+  position: absolute;
+  left: 0;
+}
+
+.learn-more-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.learn-more-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+} 
