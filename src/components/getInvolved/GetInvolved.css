@@ -1,0 +1,290 @@
+/* ==========================================================================
+   BLGM GET INVOLVED & PARTNERSHIPS STYLES
+   ========================================================================== */
+
+.blgm-pathways-nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.blgm-pathway-tab {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.blgm-pathway-tab i {
+  font-size: 1.6rem;
+  color: var(--primary);
+}
+
+.blgm-pathway-tab:hover {
+  border-color: var(--accent);
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.blgm-pathway-tab.active {
+  background: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.blgm-pathway-tab.active i {
+  color: var(--accent);
+}
+
+@media (max-width: 992px) {
+  .blgm-pathways-nav {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blgm-pathways-nav {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blgm-pathway-intro {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3.5rem auto;
+}
+
+/* Partnership Models Grid */
+.blgm-partner-models-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.blgm-partner-model-card {
+  padding: 2.5rem 2rem;
+}
+
+.blgm-partner-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--accent-light);
+  color: var(--accent-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.blgm-partner-model-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.blgm-partner-model-card p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.blgm-partner-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.25rem;
+  margin-top: auto;
+}
+
+.blgm-partner-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.blgm-partner-checklist i {
+  color: var(--success);
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.blgm-partner-cta-strip {
+  background: var(--bg-canvas);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xl);
+  padding: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.blgm-partner-cta-content h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.blgm-partner-cta-content p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0;
+  max-width: 620px;
+}
+
+@media (max-width: 992px) {
+  .blgm-partner-models-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Volunteer Roles Grid */
+.blgm-volunteer-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+}
+
+.blgm-volunteer-role {
+  padding: 2.25rem;
+}
+
+.blgm-volunteer-role i {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.blgm-volunteer-role h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.blgm-volunteer-role p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.blgm-volunteer-form-cta {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .blgm-volunteer-roles-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Prayer Points List */
+.blgm-prayer-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.blgm-prayer-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+}
+
+.blgm-prayer-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.blgm-prayer-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-canvas);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.blgm-prayer-content h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.blgm-prayer-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Advocate Grid */
+.blgm-advocate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.blgm-advocate-card {
+  padding: 2.25rem;
+  text-align: center;
+}
+
+.blgm-advocate-card i {
+  font-size: 2.25rem;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.blgm-advocate-card h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.blgm-advocate-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .blgm-advocate-grid {
+    grid-template-columns: 1fr;
+  }
+}

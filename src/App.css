@@ -1,172 +1,397 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
-* {
-  padding: 0;
-  margin: 0;
+/* ==========================================================================
+   BRIGHTER LAND GLOBAL MISSION (BLGM) — DESIGN SYSTEM & GLOBAL STYLES
+   Aesthetics: Deep Forest, Warm Ochre, Terracotta, Natural Canvas
+   Standard: World-Class International NGO
+   ========================================================================== */
+
+:root {
+  /* Brand Palette */
+  --primary: #132E27;
+  --primary-light: #1C443A;
+  --primary-dark: #0B1B17;
+  --primary-glow: rgba(19, 46, 39, 0.15);
+  
+  --accent: #D97706;
+  --accent-hover: #B45309;
+  --accent-light: #FEF3C7;
+  --accent-subtle: #FFFBEB;
+  
+  --secondary: #9C4122;
+  --secondary-light: #FFEDD5;
+  --secondary-subtle: #FFF7ED;
+
+  --success: #059669;
+  --info: #0284C7;
+  --warning: #D97706;
+  
+  /* Neutral Canvas */
+  --bg-canvas: #FBF9F5;
+  --bg-surface: #FFFFFF;
+  --bg-subtle: #F4EFE6;
+  --bg-dark: #0E221D;
+  --bg-dark-surface: #15332B;
+  
+  /* Text */
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-inverse: #FFFFFF;
+  --text-inverse-muted: #CBD5E1;
+  
+  /* Borders & Dividers */
+  --border-subtle: rgba(19, 46, 39, 0.08);
+  --border-strong: rgba(19, 46, 39, 0.16);
+  --border-dark: rgba(255, 255, 255, 0.12);
+  
+  /* Elevation Shadows */
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 6px 16px -2px rgba(19, 46, 39, 0.08), 0 2px 6px -1px rgba(19, 46, 39, 0.04);
+  --shadow-lg: 0 14px 30px -4px rgba(19, 46, 39, 0.12), 0 4px 10px -2px rgba(19, 46, 39, 0.06);
+  --shadow-xl: 0 24px 48px -8px rgba(19, 46, 39, 0.18);
+  
+  /* Geometry & Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+  
+  /* Typography */
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Layout Dimensions */
+  --container-max: 1240px;
+  --container-narrow: 860px;
+  --nav-height: 84px;
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   CSS RESET & BASE
+   ========================================================================== */
+*, *::before, *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: #f8f8f8;
+  font-family: var(--font-body);
+  color: var(--text-primary);
+  background-color: var(--bg-canvas);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
-/*------------global-----------*/
-.container {
-  max-width: 85%;
-  margin: auto;
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--primary);
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
-.flexSB {
-  display: flex;
-  justify-content: space-between;
+
+p {
+  margin-bottom: 1.2rem;
 }
-.icon {
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 50%;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #1eb2a6;
-  transition: 0.5s;
+
+p:last-child {
+  margin-bottom: 0;
 }
-.icon:hover {
-  cursor: pointer;
-  background-color: #1eb2a6;
-  color: #fff;
-}
+
 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================================================
+   CONTAINERS & STRUCTURAL UTILITIES
+   ========================================================================== */
+.blgm-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.blgm-container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.blgm-section {
+  padding: 5.5rem 0;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .blgm-section {
+    padding: 3.75rem 0;
+  }
+}
+
+.blgm-section-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-inverse);
+}
+
+.blgm-section-dark h1,
+.blgm-section-dark h2,
+.blgm-section-dark h3 {
+  color: var(--text-inverse);
+}
+
+.blgm-section-subtle {
+  background-color: var(--bg-subtle);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY UTILITIES
+   ========================================================================== */
+.blgm-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
+  background: var(--accent-light);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.blgm-eyebrow-dark {
+  background: rgba(217, 119, 6, 0.18);
+  color: #FBBF24;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.blgm-heading-display {
+  font-size: clamp(2.4rem, 5vw, 3.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.blgm-heading-xl {
+  font-size: clamp(1.85rem, 3.5vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.blgm-heading-lg {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.blgm-lead {
+  font-size: clamp(1.05rem, 1.4vw, 1.22rem);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.blgm-section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 3.5rem auto;
+}
+
+.blgm-section-header.text-left {
+  text-align: left;
+  margin-left: 0;
+}
+
+/* ==========================================================================
+   BUTTON SYSTEM
+   ========================================================================== */
+.blgm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.875rem 1.85rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
   text-decoration: none;
 }
-li {
-  list-style-type: none;
+
+.blgm-btn i {
+  transition: transform var(--transition-fast);
 }
-.row {
-  width: 50%;
+
+.blgm-btn:hover i {
+  transform: translateX(3px);
 }
-button {
-  padding: 17px 30px;
-  background-color: #fff;
-  color: #1eb2a6;
-  font-weight: 600;
-  border: none;
-  margin: 30px 10px 0 0;
-  border-radius: 3px;
-  cursor: pointer;
-  box-shadow: 0 24px 36px -11px rgb(0 0 0 / 9%);
-  transition: 0.5s;
+
+.blgm-btn-primary {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  box-shadow: 0 4px 14px rgba(19, 46, 39, 0.25);
 }
-button i {
-  margin-left: 20px;
+
+.blgm-btn-primary:hover {
+  background-color: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(19, 46, 39, 0.35);
+  color: var(--text-inverse);
 }
-button:hover {
+
+.blgm-btn-accent {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.3);
+}
+
+.blgm-btn-accent:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
+  color: #FFFFFF;
+}
+
+.blgm-btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
   box-shadow: none;
 }
-.primary-btn {
-  background-color: #1eb2a6;
-  color: #fff;
+
+.blgm-btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--text-inverse);
+  transform: translateY(-2px);
 }
 
-/*------------global-----------*/
-#heading {
-  text-align: center;
-  padding: 40px 0;
-}
-#heading h3 {
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #1eb2a6;
-  text-transform: uppercase;
-}
-#heading h1 {
-  font-size: 45px;
-  margin: 20px 0;
-  text-transform: capitalize;
-}
-p {
-  line-height: 30px;
-  font-size: 18px;
+.blgm-btn-outline-white {
+  background: transparent;
+  color: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: none;
 }
 
-.back {
-  background-image: url("../public/images/back.webp");
-  background-size: cover;
-  background-attachment: fixed;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100vh;
-  padding-top: 30%;
-  padding-right: 50px;
-  color: #fff;
-  text-align: center;
+.blgm-btn-outline-white:hover {
+  background-color: #FFFFFF;
+  color: var(--primary);
+  transform: translateY(-2px);
 }
-.back h1 {
-  font-size: 100px;
-  font-weight: 400;
+
+.blgm-btn-sm {
+  padding: 0.55rem 1.15rem;
+  font-size: 0.875rem;
 }
-.back h2 {
-  font-weight: 500;
-  font-size: 17px;
-  text-transform: uppercase;
+
+.blgm-btn-lg {
+  padding: 1.05rem 2.35rem;
+  font-size: 1.12rem;
 }
-.margin {
-  margin-top: 40.3%;
-}
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 30px;
-}
-.flex {
+
+/* ==========================================================================
+   CARDS & SURFACES
+   ========================================================================== */
+.blgm-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  transition: all var(--transition-normal);
   display: flex;
-}
-.grid2 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-}
-.outline-btn {
-  margin: 0;
-  box-shadow: none;
-  border: 2px solid #1eb2a6;
-  width: 100%;
-  transition: 0.5s;
-}
-.outline-btn:hover {
-  background-color: #1eb2a6;
-  color: #fff;
-}
-.grid3 {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 10px;
-}
-.padding {
-  padding: 80px 0;
-}
-.shadow {
-  box-shadow: 0 5px 25px -2px rgb(0 0 0 / 6%);
-  background-color: #fff;
-}
-@media screen and (max-width: 768px) {
-  .grid2,
-  .grid3,
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .back {
-    background-position: center;
-    padding-top: 50%;
-    height: 80vh;
-  }
+  flex-direction: column;
 }
 
+.blgm-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-strong);
+}
+
+.blgm-card-dark {
+  background: var(--bg-dark-surface);
+  border: 1px solid var(--border-dark);
+  color: var(--text-inverse);
+}
+
+/* ==========================================================================
+   TRANSPARENCY & CONTENT-REQUIRED BADGE (For Honest Reporting)
+   ========================================================================== */
+.blgm-content-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #92400E;
+  background-color: #FEF3C7;
+  border: 1px dashed #F59E0B;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   APP SHELL WRAPPER
+   ========================================================================== */
 .App {
-  padding-top: 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 960px) {
-  .App {
-    padding-top: 80px;
+.blgm-main-content {
+  flex: 1 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .blgm-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

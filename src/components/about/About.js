@@ -1,467 +1,330 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { LEADERSHIP_DATA } from '../../data/blgmData';
 import './about.css';
-import OurImpact from '../common/OurImpact';
-
-// Reusable animation variants
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2
-    }
-  }
-};
 
 const About = () => {
   const history = useHistory();
 
-  const teamMembers = [
-    {
-      name: "Rev. Fidelis Gambo",
-      role: "Founder & Executive Director",
-      bio: "With over 20 years of experience in education and healthcare, Rev. Fidelis Gambo founded the organization to address the critical needs of underserved communities.",
-      image: "/images/team/t1.webp",
-      socials: [
-        { icon: "fab fa-facebook-f", url: "#" },
-        { icon: "fab fa-twitter", url: "#" },
-        { icon: "fab fa-instagram", url: "#" },
-        { icon: "fab fa-tiktok", url: "#" }
-      ]
-    },
-    {
-      name: "Michael Chen",
-      role: "Program Director",
-      bio: "Michael brings 15 years of experience in program management and has been instrumental in expanding our reach to new communities.",
-      image: "/images/team/t2.webp",
-      socials: [
-        { icon: "fab fa-facebook-f", url: "#" },
-        { icon: "fab fa-twitter", url: "#" },
-        { icon: "fab fa-instagram", url: "#" },
-        { icon: "fab fa-tiktok", url: "#" }
-      ]
-    },
-    {
-      name: "Emma Rodriguez",
-      role: "Director of Operations",
-      bio: "Emma oversees the day-to-day operations and ensures the efficient delivery of our programs and services.",
-      image: "/images/team/t3.webp",
-      socials: [
-        { icon: "fab fa-facebook-f", url: "#" },
-        { icon: "fab fa-twitter", url: "#" },
-        { icon: "fab fa-instagram", url: "#" },
-        { icon: "fab fa-tiktok", url: "#" }
-      ]
-    }
-  ];
-
-  const heroStyle = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(${process.env.PUBLIC_URL}/images/mission-hero.jpg)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed'
-  };
-
-  const missionImageStyle = {
-    backgroundImage: `url(${process.env.PUBLIC_URL}/images/mission-bg.jpg)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
-  };
-
-  const visionImageStyle = {
-    backgroundImage: `url(${process.env.PUBLIC_URL}/images/vision-bg.jpg)`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center'
-  };
-
   return (
-    <div className="about-container">
-      {/* Hero Section with Parallax */}
-      <motion.section 
-        className="about-hero"
-        style={heroStyle}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <div className="hero-content">
-          <motion.h1
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            Transforming Lives,<br />Building Futures
-          </motion.h1>
-          <motion.div 
-            className="hero-line"
-            initial={{ width: 0 }}
-            animate={{ width: "100px" }}
-            transition={{ delay: 0.8, duration: 0.8 }}
+    <div className="blgm-about-page">
+      {/* Hero Banner */}
+      <section className="blgm-page-hero">
+        <div className="blgm-page-hero-bg">
+          <img 
+            src="/images/about-hero.jpg" 
+            alt="Brighter Land Global Mission field work" 
+            className="blgm-page-hero-img" 
           />
-          <motion.div
-            className="hero-description"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 0.8 }}
-          >
-            <h2>Who We Are</h2>
-            <p>BLGM is a non-profit, non-governmental, and non-political organisation which creates an environment where underprivileged children can break the barrier of access to education regardless of their religious beliefs and communities can be better.</p>
-          </motion.div>
+          <div className="blgm-page-hero-overlay"></div>
         </div>
-      </motion.section>
-
-      {/* About Us Section */}
-      <motion.section 
-        className="about-us-section"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="about-us-content">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            About Us
-          </motion.h2>
-          <motion.div 
-            className="animated-border"
-            initial={{ width: 0 }}
-            whileInView={{ width: "100px" }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          />
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.6 }}
-            className="animated-text"
-          >
-            {"Brighter Land Global Mission was established in 2015 and fully incorporated in 2024, dedicated to supporting education, community development, food security, and livelihood (skills development) for underprivileged, marginalised groups and conflict-affected communities in Nigeria. Our mandate is to creating an enabling environment where children and women have equal access to education, food, portable water, skills and a good facility which encourages modern teaching for underprivileged, marginalised groups and conflict-affected communities."
-              .split(' ')
-              .map((word, index) => (
-                <span key={index} style={{ '--delay': `${index * 0.2}s` }}>{word} </span>
-              ))}
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
-            className="animated-text"
-          >
-            {"Dedicated individuals from within Nigeria and abroad have generously supported our organisations with resources and encouragement. We currently have educational sponsorship programmes with more than 50 beneficiaries, and we have supported and improved several communities by providing portable drinking water and mobile schools to facilitate learning. We advocate our core values using different platforms, supporting and creating projects that address educational and socio-economic challenges."
-              .split(' ')
-              .map((word, index) => (
-                <span key={index} style={{ '--delay': `${index * 0.2}s` }}>{word} </span>
-              ))}
-          </motion.p>
+        <div className="blgm-container blgm-page-hero-content">
+          <div className="blgm-eyebrow blgm-eyebrow-dark">
+            <i className="fa-solid fa-users"></i>
+            <span>About Brighter Land Global Mission</span>
+          </div>
+          <h1 className="blgm-heading-display" style={{ color: '#FFFFFF' }}>
+            Faith That Serves. Hope That Endures.
+          </h1>
+          <p className="blgm-lead" style={{ color: '#E2E8F0', maxWidth: 740 }}>
+            Dedicated to breaking educational barriers for orphans, drilling life-saving clean water boreholes, and fostering sustainable community recovery across Nigeria.
+          </p>
         </div>
-      </motion.section>
-
-      {/* Mission Vision Values Section */}
-      <section className="mvv-container">
-        <motion.div 
-          className="mvv-card mission-card"
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="mvv-content">
-            <h2>Our Mission</h2>
-            <div className="animated-border"></div>
-            <p>Our organization is dedicated to support and empower marginalised, underprivileged groups and conflict-affected communities through the provision of equitable education, skills training, livelihood opportunities, and a holistic approach in fostering community development and recovery founded in respect for diverse religious beliefs.</p>
-          </div>
-          <div className="mvv-image mission-image" style={missionImageStyle}>
-            <div className="overlay-pattern"></div>
-          </div>
-        </motion.div>
-
-        <motion.div 
-          className="mvv-card vision-card"
-          initial={{ x: 100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="mvv-image vision-image" style={visionImageStyle}>
-            <div className="overlay-pattern"></div>
-          </div>
-          <div className="mvv-content">
-            <h2>Our Vision</h2>
-            <div className="animated-border"></div>
-            <p>To create better communities where underprivileged children and marginalized groups, regardless of their religious beliefs, have equal access to quality education, empowering skills, and sustainable livelihoods. Building inclusive and resilient communities that are stabilized through equitable development and recovery from conflict.</p>
-          </div>
-        </motion.div>
-
-        <motion.div 
-          className="values-grid"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-        >
-          <h2 className="values-title">Our Core Values</h2>
-          <div className="values-container">
-            <motion.div className="value-item" variants={fadeInUp}>
-              <div className="value-icon">
-                <i className="fas fa-heart"></i>
-              </div>
-              <h3>Compassion</h3>
-              <p>Serving with empathy and understanding</p>
-            </motion.div>
-            <motion.div className="value-item" variants={fadeInUp}>
-              <div className="value-icon">
-                <i className="fas fa-hands-helping"></i>
-              </div>
-              <h3>Empowerment</h3>
-              <p>Building capacity for sustainable change</p>
-            </motion.div>
-            <motion.div className="value-item" variants={fadeInUp}>
-              <div className="value-icon">
-                <i className="fas fa-balance-scale"></i>
-              </div>
-              <h3>Equity</h3>
-              <p>Ensuring fair access and opportunities</p>
-            </motion.div>
-            <motion.div className="value-item" variants={fadeInUp}>
-              <div className="value-icon">
-                <i className="fas fa-seedling"></i>
-              </div>
-              <h3>Sustainability</h3>
-              <p>Creating lasting positive impact</p>
-            </motion.div>
-          </div>
-        </motion.div>
       </section>
 
-      {/* Who We Work With Section */}
-      <motion.section 
-        className="who-we-work-with-section"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="who-we-work-with-content">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            Who We Work With
-          </motion.h2>
-          <motion.div 
-            className="animated-border"
-            initial={{ width: 0 }}
-            whileInView={{ width: "100px" }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          />
-          <div className="partnership-grid">
-            <motion.div 
-              className="partnership-card"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 }}
-            >
-              <div className="partnership-icon">
-                <i className="fas fa-users"></i>
+      {/* 1. WHO WE ARE & GENESIS */}
+      <section className="blgm-section">
+        <div className="blgm-container">
+          <div className="blgm-about-story-grid">
+            <div className="blgm-about-story-text">
+              <div className="blgm-eyebrow">
+                <i className="fa-solid fa-seedling"></i>
+                <span>Our Genesis & Mandate</span>
               </div>
-              <p>We work together with community leaders, civil societies, and parents to advocate for quality education, including informal education, and increase children enrolment.</p>
-            </motion.div>
+              <h2 className="blgm-heading-xl">
+                Our Genesis & Mandate
+              </h2>
+              <p className="blgm-lead">
+                Brighter Land Global Mission was established in 2015 and fully incorporated in 2024. It is dedicated to supporting education, community development, food security, and livelihood (skills development) for underprivileged, marginalized groups, and conflict-affected communities in Nigeria.
+              </p>
+              <p>
+                Our mandate is to create an enabling environment where children and women have equal access to education, food, potable water, skills, and facilities that support modern teaching. Dedicated individuals from within Nigeria and abroad have generously supported our organization with resources and encouragement.
+              </p>
+              <p>
+                We currently have educational programs with more than 60 beneficiaries and have supported and improved several communities by providing potable drinking water, mobile schools, and school materials to facilitate learning. BLGM has also reached out to communities in Kaduna during conflict by providing food items and non-food items. We advocate for our core values through various platforms, supporting and creating projects that address educational and socio-economic challenges.
+              </p>
 
-            <motion.div 
-              className="partnership-card"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.7 }}
-            >
-              <div className="partnership-icon">
-                <i className="fas fa-tint"></i>
-              </div>
-              <p>Address the challenge of portable drinking water in hard to reach and conflict-affected communities by collaborating with the stakeholders and dedicated individuals as well as government.</p>
-            </motion.div>
-
-            <motion.div 
-              className="partnership-card"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-            >
-              <div className="partnership-icon">
-                <i className="fas fa-school"></i>
-              </div>
-              <p>Construction of mobile schools through the support of committed individuals and community stakeholders.</p>
-            </motion.div>
-
-            <motion.div 
-              className="partnership-card"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.9 }}
-            >
-              <div className="partnership-icon">
-                <i className="fas fa-utensils"></i>
-              </div>
-              <p>Improve food access to most vulnerable households through the collaborative efforts of dedicated individuals, community leaders, and other stakeholders.</p>
-            </motion.div>
-          </div>
-        </div>
-      </motion.section>
-
-      {/* History Section */}
-      <motion.section 
-        className="history-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-      >
-        <motion.h2 variants={fadeInUp}>Our Journey</motion.h2>
-        <div className="history-timeline">
-          <motion.div 
-            className="timeline-item"
-            variants={fadeInUp}
-          >
-            <div className="timeline-content">
-              <div className="timeline-year">2010</div>
-              <h3>The Beginning</h3>
-              <p>Founded with a vision to support orphaned children's education</p>
-            </div>
-          </motion.div>
-          <motion.div 
-            className="timeline-item"
-            variants={fadeInUp}
-          >
-            <div className="timeline-content">
-              <div className="timeline-year">2015</div>
-              <h3>Expanding Horizons</h3>
-              <p>Expanded to include healthcare initiatives and professional training programs</p>
-            </div>
-          </motion.div>
-          <motion.div 
-            className="timeline-item"
-            variants={fadeInUp}
-          >
-            <div className="timeline-content">
-              <div className="timeline-year">2020</div>
-              <h3>Major Milestone</h3>
-              <p>Reached milestone of 1,000+ children sponsored and 1,000 professionals trained</p>
-            </div>
-          </motion.div>
-          <motion.div 
-            className="timeline-item"
-            variants={fadeInUp}
-          >
-            <div className="timeline-content">
-              <div className="timeline-year">Present</div>
-              <h3>Global Impact</h3>
-              <p>Continuing to expand our impact across multiple countries and communities</p>
-            </div>
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Impact Section */}
-      <OurImpact />
-
-      {/* Leadership Team Section */}
-      <motion.section 
-        className="leadership-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={staggerContainer}
-      >
-        <motion.h2 className="leadership-title" variants={fadeInUp}>Our Leadership Team</motion.h2>
-        <div className="team grid">
-          {teamMembers.map((member, index) => (
-            <motion.div 
-              className="items shadow" 
-              key={index}
-              variants={fadeInUp}
-              whileHover={{ y: -10, transition: { duration: 0.2 } }}
-            >
-              <div className="img">
-                <img src={member.image} alt={member.name} />
-                <div className="overlay">
-                  {member.socials.map((social, i) => (
-                    <motion.a 
-                      href={social.url} 
-                      key={i} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <i className={`${social.icon} icon`}></i>
-                    </motion.a>
-                  ))}
+              <div className="blgm-about-milestone-strip">
+                <div className="blgm-milestone-box">
+                  <span className="blgm-milestone-year">2015</span>
+                  <span className="blgm-milestone-label">Established</span>
+                  <p>Founded on the ground to serve underprivileged & conflict-affected groups.</p>
+                </div>
+                <div className="blgm-milestone-box">
+                  <span className="blgm-milestone-year">60+</span>
+                  <span className="blgm-milestone-label">Beneficiaries</span>
+                  <p>Active educational programs, mobile schools & potable drinking water.</p>
+                </div>
+                <div className="blgm-milestone-box">
+                  <span className="blgm-milestone-year">2024</span>
+                  <span className="blgm-milestone-label">Fully Incorporated</span>
+                  <p>CAC incorporation enabling scalable development & relief partnerships.</p>
                 </div>
               </div>
-              <div className="details">
-                <h2>{member.name}</h2>
-                <p style={{ color: '#1976d2', fontWeight: 600 }}>{member.role}</p>
-                <p style={{ color: '#555', fontSize: '1.05rem', lineHeight: 1.6 }}>{member.bio}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
+            </div>
 
-      {/* Call to Action */}
-      <motion.section 
-        className="cta-section"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2>Join Our Mission</h2>
-        <p>Be part of our journey to create lasting impact in communities worldwide</p>
-        <div className="cta-buttons">
-          <motion.button 
-            className="primary-btn"
-            onClick={() => history.push('/donate')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Donate Now
-          </motion.button>
-          <motion.button 
-            className="secondary-btn"
-            onClick={() => history.push('/contact')}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Involved
-          </motion.button>
+            <div className="blgm-about-story-visual">
+              <img 
+                src="/images/gallery/community.jpg" 
+                alt="BLGM field team meeting community elders" 
+                className="blgm-about-img-main"
+              />
+              <div className="blgm-about-stat-floater">
+                <div className="blgm-about-stat-num">10+</div>
+                <div className="blgm-about-stat-text">Years of frontline community presence in Nigeria</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </motion.section>
+      </section>
+
+      {/* 2. MISSION, VISION & CORE VALUES */}
+      <section className="blgm-section blgm-section-subtle">
+        <div className="blgm-container">
+          <div className="blgm-mvv-cards-grid">
+            <div className="blgm-card blgm-mvv-card">
+              <div className="blgm-mvv-icon blgm-mvv-mission">
+                <i className="fa-solid fa-bullseye"></i>
+              </div>
+              <h3 className="blgm-heading-lg">Our Mission</h3>
+              <p>
+                Our organization is dedicated to supporting and empowering marginalised, underprivileged groups, and conflict-affected communities through the provision of equitable education, skills training, livelihood opportunities, and a holistic approach to fostering community development and recovery founded on respect for diverse religious beliefs.
+              </p>
+            </div>
+
+            <div className="blgm-card blgm-mvv-card">
+              <div className="blgm-mvv-icon blgm-mvv-vision">
+                <i className="fa-solid fa-eye"></i>
+              </div>
+              <h3 className="blgm-heading-lg">Our Vision</h3>
+              <p>
+                To create better communities where underprivileged children and marginalized groups, regardless of their religious beliefs, have equal access to quality education, marketable skills, and sustainable livelihoods. We aim to build inclusive and resilient communities that are stabilized through equitable development and recovery from conflict.
+              </p>
+            </div>
+          </div>
+
+          <div className="blgm-values-block">
+            <div className="blgm-section-header" style={{ marginBottom: '2.5rem' }}>
+              <div className="blgm-eyebrow">
+                <i className="fa-solid fa-heart"></i>
+                <span>Guiding Principles</span>
+              </div>
+              <h2 className="blgm-heading-xl">Our Core Values</h2>
+              <p className="blgm-lead">The non-negotiable principles that guide every field decision, dollar allocated, and community partnership.</p>
+            </div>
+
+            <div className="blgm-values-grid">
+              <div className="blgm-value-item">
+                <div className="blgm-value-icon">
+                  <i className="fa-solid fa-hand-holding-heart"></i>
+                </div>
+                <h4>Compassion in Action</h4>
+                <p>Serving the vulnerable with empathy, dignity, and personal sacrificial commitment.</p>
+              </div>
+
+              <div className="blgm-value-item">
+                <div className="blgm-value-icon">
+                  <i className="fa-solid fa-scale-balanced"></i>
+                </div>
+                <h4>Fiduciary Integrity</h4>
+                <p>Total transparency, strict accountability to donors, and zero tolerance for mismanagement.</p>
+              </div>
+
+              <div className="blgm-value-item">
+                <div className="blgm-value-icon">
+                  <i className="fa-solid fa-person-circle-check"></i>
+                </div>
+                <h4>Dignity & Equity</h4>
+                <p>Every child is created in the image of God and deserves equal opportunity to learn and thrive.</p>
+              </div>
+
+              <div className="blgm-value-item">
+                <div className="blgm-value-icon">
+                  <i className="fa-solid fa-seedling"></i>
+                </div>
+                <h4>Community Sustainability</h4>
+                <p>Fostering local ownership so that schools, boreholes, and farms flourish for generations.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. FAITH IDENTITY: "FAITH THAT SERVES" */}
+      <section className="blgm-section">
+        <div className="blgm-container">
+          <div className="blgm-faith-panel">
+            <div className="blgm-faith-content">
+              <div className="blgm-eyebrow">
+                <i className="fa-solid fa-cross"></i>
+                <span>Our Christian Motivation</span>
+              </div>
+              <h2 className="blgm-heading-xl">
+                Faith Expressed Through Practical, Unconditional Love
+              </h2>
+              <p className="blgm-lead">
+                Brighter Land Global Mission is unashamedly motivated by the Gospel of Jesus Christ. Yet our faith is not a barrier—it is an open door of service.
+              </p>
+              <p>
+                In the spirit of the Good Samaritan, we serve individuals and communities regardless of their religious affiliation, ethnic heritage, or background. We believe that caring for the orphan, feeding the hungry, bringing water to the thirsty, and teaching the displaced is the purest practical reflection of Christian devotion.
+              </p>
+              <div className="blgm-faith-quote">
+                <i className="fa-solid fa-quote-left"></i>
+                <p>
+                  "Religion that God our Father accepts as pure and faultless is this: to look after orphans and widows in their distress and to keep oneself from being polluted by the world."
+                </p>
+                <span>— James 1:27</span>
+              </div>
+            </div>
+
+            <div className="blgm-faith-sidebar">
+              <div className="blgm-faith-card">
+                <h4>How Our Faith Shapes Us:</h4>
+                <ul>
+                  <li>
+                    <i className="fa-solid fa-check"></i>
+                    <span><strong>Inclusive Service:</strong> Aid is provided purely based on vulnerability, never conditional on conversion or affiliation.</span>
+                  </li>
+                  <li>
+                    <i className="fa-solid fa-check"></i>
+                    <span><strong>Integrity of Stewardship:</strong> Treating every gift and grant as a holy trust held before God.</span>
+                  </li>
+                  <li>
+                    <i className="fa-solid fa-check"></i>
+                    <span><strong>Spiritual Resilience:</strong> Equipping local pastors and mentors through the 'Bring Them Young' youth initiative.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. LEADERSHIP & GOVERNANCE */}
+      <section className="blgm-section blgm-section-subtle">
+        <div className="blgm-container">
+          <div className="blgm-section-header">
+            <div className="blgm-eyebrow">
+              <i className="fa-solid fa-user-shield"></i>
+              <span>Organizational Stewardship</span>
+            </div>
+            <h2 className="blgm-heading-xl">Leadership & Governance</h2>
+            <p className="blgm-lead">
+              Grounded in experienced field leadership and independent governance.
+            </p>
+          </div>
+
+          <div className="blgm-leadership-grid">
+            {LEADERSHIP_DATA.map((leader, index) => (
+              <div className="blgm-card blgm-leader-card" key={index}>
+                <div className="blgm-leader-image-frame">
+                  <img src={leader.image} alt={leader.name} loading="lazy" />
+                  {leader.badge && (
+                    <span className="blgm-verified-badge" title={leader.badge}>
+                      <i className="fa-solid fa-circle-check"></i> {leader.badge}
+                    </span>
+                  )}
+                </div>
+
+                <div className="blgm-leader-details">
+                  <h3 className="blgm-leader-name">{leader.name}</h3>
+                  <div className="blgm-leader-role">{leader.role}</div>
+                  <p className="blgm-leader-bio">{leader.bio}</p>
+
+                  {leader.socials && (
+                    <div className="blgm-leader-socials">
+                      {leader.socials.map((s, i) => (
+                        <a href={s.url} key={i} target="_blank" rel="noopener noreferrer" aria-label={`${leader.name} social link`}>
+                          <i className={s.icon}></i>
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. SAFEGUARDING & ACCOUNTABILITY */}
+      <section className="blgm-section">
+        <div className="blgm-container">
+          <div className="blgm-safeguarding-box">
+            <div className="blgm-safeguarding-header">
+              <i className="fa-solid fa-shield-halved"></i>
+              <div>
+                <h3 className="blgm-heading-lg">Child Safeguarding & Protection Policy</h3>
+                <p>Our binding commitment to every child entrusted to our care.</p>
+              </div>
+            </div>
+
+            <div className="blgm-safeguarding-grid">
+              <div className="blgm-safe-item">
+                <i className="fa-solid fa-lock"></i>
+                <h4>Zero Tolerance for Abuse</h4>
+                <p>Mandatory background vetting for all volunteer teachers and field officers with strict child protection protocols.</p>
+              </div>
+              <div className="blgm-safe-item">
+                <i className="fa-solid fa-camera-slash"></i>
+                <h4>Dignified Media Ethics</h4>
+                <p>We respect child privacy and dignity; photographs and videos are captured strictly with community consent and without exploitative portrayals.</p>
+              </div>
+              <div className="blgm-safe-item">
+                <i className="fa-solid fa-file-shield"></i>
+                <h4>Independent Fiduciary Audit</h4>
+                <p>All programme expenditures are documented, tracked, and subject to regular Board and regulatory review under Nigerian non-profit guidelines.</p>
+              </div>
+            </div>
+
+            <div className="blgm-safeguarding-footer">
+              <span className="blgm-content-flag">
+                <i className="fa-solid fa-file-pdf"></i>
+                <span>CONTENT REQUIRED: Full BLGM Child Safeguarding Policy PDF upload</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="blgm-section blgm-section-cta">
+        <div className="blgm-container" style={{ textAlign: 'center' }}>
+          <h2 className="blgm-heading-xl" style={{ marginBottom: '1.25rem' }}>
+            Ready to Stand With Us?
+          </h2>
+          <p className="blgm-lead" style={{ maxWidth: 640, margin: '0 auto 2.5rem auto' }}>
+            Your support sponsors a child’s education, provides clean water to a whole village, and empowers communities with enduring hope.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <button 
+              onClick={() => history.push('/donate')}
+              className="blgm-btn blgm-btn-accent blgm-btn-lg"
+            >
+              <i className="fa-solid fa-heart"></i>
+              <span>Donate Now</span>
+            </button>
+            <button 
+              onClick={() => history.push('/contact')}
+              className="blgm-btn blgm-btn-outline blgm-btn-lg"
+            >
+              <span>Get in Touch with Rev. Gambo</span>
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
 
-export default About; 
+export default About;
