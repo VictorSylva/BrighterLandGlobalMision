@@ -81,13 +81,13 @@ const Impact = () => {
     },
     {
       key: 'partner',
-      tag: 'Partnerships & Field Work',
+      tag: 'Partnerships & Community Care',
       icon: 'fa-solid fa-handshake',
-      title: 'Collaborative Partnerships & Community Stakeholders',
-      subtitle: 'Grassroots consultations and institutional partner engagements ensuring local ownership of all field projects.',
+      title: 'Collaborative Partnerships, Community Care & Thanksgiving',
+      subtitle: 'Grassroots consultations, direct community care, and local thanksgiving celebrations ensuring enduring community ownership.',
       direction: 'right',
       speed: '40s',
-      items: FIELD_GALLERY.filter(p => p.category === 'partner' || p.category === 'community')
+      items: FIELD_GALLERY.filter(p => p.category === 'partner' || p.category === 'community' || p.category === 'care')
     }
   ];
 
@@ -105,7 +105,7 @@ const Impact = () => {
       {/* Hero Banner */}
       <section className="blgm-page-hero">
         <div className="blgm-page-hero-bg">
-          <img src="/images/impact-hero.jpg" alt="BLGM Community Impact" className="blgm-page-hero-img" />
+          <img src="/images/gallery/borehole10.jpg" alt="BLGM Community Impact" className="blgm-page-hero-img" />
           <div className="blgm-page-hero-overlay"></div>
         </div>
 
@@ -308,7 +308,6 @@ const Impact = () => {
                       >
                         <div className="blgm-carousel-img-box">
                           <img src={photo.src} alt={photo.caption} loading="lazy" />
-                          <span className="blgm-gallery-tag">{photo.tag}</span>
                           <div className="blgm-gallery-hover-overlay">
                             <i className="fa-solid fa-expand"></i>
                             <span>View Photo</span>

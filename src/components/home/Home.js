@@ -23,8 +23,8 @@ const Home = () => {
       <section className="blgm-hero">
         <div className="blgm-hero-bg">
           <img 
-            src="/images/gallery/i22.jpg" 
-            alt="Brighter Land community outreach and education leadership with children in Plateau State" 
+            src="/images/gallery/borehole13.jpg" 
+            alt="Brighter Land clean water borehole installation delivering potable water to rural community in Nigeria" 
             className="blgm-hero-image"
           />
           <div className="blgm-hero-overlay"></div>
@@ -166,7 +166,7 @@ const Home = () => {
             <div className="blgm-why-visual">
               <div className="blgm-why-image-wrapper">
                 <img 
-                  src="/images/gallery/school1.jpg" 
+                  src="/images/gallery/mobile school4.jpg" 
                   alt="Young learners participating in BLGM Mobile School" 
                   className="blgm-why-img-main"
                 />
@@ -473,7 +473,6 @@ const Home = () => {
                 title={`${photo.title} — View in Impact Gallery`}
               >
                 <img src={photo.src} alt={photo.caption} loading="lazy" />
-                <span className="blgm-gallery-preview-tag">{photo.tag}</span>
                 <div className="blgm-gallery-overlay">
                   <p style={{ fontWeight: 700, marginBottom: '0.25rem' }}>{photo.title}</p>
                   <p>{photo.caption}</p>

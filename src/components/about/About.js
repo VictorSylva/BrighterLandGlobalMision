@@ -12,7 +12,7 @@ const About = () => {
       <section className="blgm-page-hero">
         <div className="blgm-page-hero-bg">
           <img 
-            src="/images/about-hero.jpg" 
+            src="/images/gallery/community.jpg" 
             alt="Brighter Land Global Mission field work" 
             className="blgm-page-hero-img" 
           />
@@ -75,8 +75,8 @@ const About = () => {
 
             <div className="blgm-about-story-visual">
               <img 
-                src="/images/gallery/community.jpg" 
-                alt="BLGM field team meeting community elders" 
+                src="/images/gallery/care4.jpg" 
+                alt="BLGM field team providing community care and support in Nigeria" 
                 className="blgm-about-img-main"
               />
               <div className="blgm-about-stat-floater">
