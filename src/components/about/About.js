@@ -229,11 +229,6 @@ const About = () => {
               <div className="blgm-card blgm-leader-card" key={index}>
                 <div className="blgm-leader-image-frame">
                   <img src={leader.image} alt={leader.name} loading="lazy" />
-                  {leader.badge && (
-                    <span className="blgm-verified-badge" title={leader.badge}>
-                      <i className="fa-solid fa-circle-check"></i> {leader.badge}
-                    </span>
-                  )}
                 </div>
 
                 <div className="blgm-leader-details">

@@ -213,7 +213,6 @@ const Home = () => {
               >
                 <div className="blgm-programme-media">
                   <img src={prog.image} alt={prog.title} />
-                  <span className="blgm-programme-tag">{prog.category}</span>
                 </div>
 
                 <div className="blgm-programme-body">
@@ -270,9 +269,6 @@ const Home = () => {
                   alt="Community celebration of clean drinking water" 
                   className="blgm-story-img"
                 />
-                <div className="blgm-story-badge">
-                  <i className="fa-solid fa-book-bookmark"></i> Featured Field Story
-                </div>
               </div>
 
               <div className="blgm-story-narrative">

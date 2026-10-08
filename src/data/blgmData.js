@@ -78,7 +78,7 @@ export const PROGRAMS_DATA = [
     title: "Education Sponsorship & Mobile Schools",
     subtitle: "Removing systemic barriers to learning for orphans, missionary children, and crisis-displaced youth.",
     category: "Education & Literacy",
-    image: "/images/gallery/school2.jpg",
+    image: "/images/gallery/Education Sponsorship.jpeg",
     problem: "Recurrent crises and displacement in rural Plateau State and North-Central Nigeria force schools to shut down, leaving vulnerable children out of the classroom for years. Without education, orphaned and displaced youth face severe poverty and vulnerability.",
     approach: "BLGM establishes flexible Mobile Schools in underserved rural settlements and provides direct individual scholarships covering school fees, textbooks, notebooks, backpacks, and uniforms.",
     actions: [
@@ -192,12 +192,24 @@ export const FIELD_GALLERY = [
   { id: 22, src: "/images/gallery/community school in its bad shape.jpg", category: "school", tag: "Mobile Schools", title: "Community School in Urgent Need", caption: "Underserved community classroom prior to mobile school intervention and educational support." },
   { id: 23, src: "/images/gallery/community school in its bad shape1.jpg", category: "school", tag: "Mobile Schools", title: "Severe Infrastructure Gaps in Rural Schools", caption: "Dilapidated classroom conditions highlighting the critical urgency of our Mobile School deployments." },
   { id: 24, src: "/images/gallery/community school in its bad shape2.jpg", category: "school", tag: "Mobile Schools", title: "Overcoming Learning Deficits", caption: "Rural community school facing severe lack of learning facilities and structural deficits." },
+  { id: 98, src: "/images/gallery/mobile school01.jpg", category: "school", tag: "Mobile Schools", title: "Mobile School Classroom Engagement", caption: "Students actively engaged in lessons within a newly established community mobile school." },
+  { id: 99, src: "/images/gallery/mobile school02.jpg", category: "school", tag: "Mobile Schools", title: "Community Mobile Learning Center", caption: "Bringing structured foundational education directly into rural and conflict-affected settlements." },
+  { id: 100, src: "/images/gallery/mobile school03.jpg", category: "school", tag: "Mobile Schools", title: "Grassroots Mobile School Session", caption: "Dedicated instruction and mentorship providing educational hope and continuity for children." },
 
   // 2. Student School Bags & Supplies
   { id: 25, src: "/images/gallery/bag.jpg", category: "bag", tag: "Student Bags", title: "Student School Bag & Supplies Donation", caption: "School bag and learning materials donated directly to students in our community school." },
   { id: 26, src: "/images/gallery/bag2.jpg", category: "bag", tag: "Student Bags", title: "Educational Backpack Donation", caption: "Equipping students at our school with durable bags and study packs for the academic term." },
   { id: 27, src: "/images/gallery/bag3.jpg", category: "bag", tag: "Student Bags", title: "Student Learning Pack Distribution", caption: "Smiles of joy as pupils receive their donated school bags, notebooks, and writing materials." },
   { id: 28, src: "/images/gallery/bag4.jpg", category: "bag", tag: "Student Bags", title: "Classroom Learning Supplies Donation", caption: "Classroom pack distribution ensuring every child has the essential tools needed to learn." },
+  { id: 84, src: "/images/gallery/sharing of school bags.jpeg", category: "bag", tag: "Student Bags", title: "Student School Bag Distribution", caption: "Joyful pupils receiving branded, durable school bags equipped with exercise books and writing materials." },
+  { id: 85, src: "/images/gallery/sharing of school bags1.jpeg", category: "bag", tag: "Student Bags", title: "Backpack & Learning Supplies Handover", caption: "Direct distribution of school backpacks to students in our community mobile school." },
+  { id: 86, src: "/images/gallery/sharing of school bags2.jpeg", category: "bag", tag: "Student Bags", title: "Equipping Students for Academic Success", caption: "Vulnerable students proudly receiving educational school bags to support their classroom learning." },
+  { id: 87, src: "/images/gallery/sharing of school bags3.jpeg", category: "bag", tag: "Student Bags", title: "Student Learning Pack & Bag Presentation", caption: "Smiles of joy as children receive their essential learning backpacks and notebooks." },
+  { id: 88, src: "/images/gallery/sharing of school bags5.jpeg", category: "bag", tag: "Student Bags", title: "Community School Bag Outreach", caption: "Ensuring every child in the community has a durable school bag and necessary study materials." },
+  { id: 89, src: "/images/gallery/sharing of school bags6.jpeg", category: "bag", tag: "Student Bags", title: "Classroom Backpack Distribution Event", caption: "Equipping young minds with the essential tools, textbooks, and backpacks to stay in school." },
+  { id: 90, src: "/images/gallery/sharing of school bags7.jpeg", category: "bag", tag: "Student Bags", title: "Empowering Rural Students with Bags", caption: "Handing out high-quality school bags to orphans and vulnerable children in rural settlements." },
+  { id: 91, src: "/images/gallery/sharing of school bags8.jpeg", category: "bag", tag: "Student Bags", title: "Student Support & School Pack Sharing", caption: "Overcoming educational poverty by providing children with the school bags they need." },
+  { id: 92, src: "/images/gallery/sharing of school bags9.jpeg", category: "bag", tag: "Student Bags", title: "School Bag Distribution Celebration", caption: "A memorable day as children celebrate receiving new backpacks and learning kits." },
 
   // 3. Student Educational Scholarships
   { id: 29, src: "/images/gallery/scholaship.jpg", category: "scholaship", tag: "Scholarships", title: "Student Educational Scholarship Presentation", caption: "Student awarded full educational scholarship covering tuition, books, and essential study support." },
@@ -208,10 +220,16 @@ export const FIELD_GALLERY = [
   { id: 34, src: "/images/gallery/scholaship8.jpg", category: "scholaship", tag: "Scholarships", title: "Promoting Educational Access & Dignity", caption: "Full student scholarship presentation unlocking pathways to higher learning and growth." },
   { id: 35, src: "/images/gallery/scholaship9.jpg", category: "scholaship", tag: "Scholarships", title: "Celebrating Student Scholars", caption: "Equipping students with scholarships that break the cycle of generational poverty." },
   { id: 36, src: "/images/gallery/scholarship andschool management.jpg", category: "scholaship", tag: "Scholarships", title: "Scholarship & School Management Dialogue", caption: "Coordinating educational sponsorship and school administration to ensure every sponsored child excels." },
+  { id: 83, src: "/images/gallery/Education Sponsorship.jpeg", category: "scholaship", tag: "Scholarships", title: "Education Sponsorship & Support", caption: "Direct educational sponsorship and learning support provided to vulnerable orphans and missionary children." },
+  { id: 94, src: "/images/gallery/scholarship1.jpeg", category: "scholaship", tag: "Scholarships", title: "Full Academic Scholarship Award", caption: "Presenting full academic scholarship certificates and educational support to deserving students." },
+  { id: 95, src: "/images/gallery/scholarship2.jpeg", category: "scholaship", tag: "Scholarships", title: "Student Scholarship Handover", caption: "Empowering orphans and crisis-affected youth with complete tuition and school supplies coverage." },
+  { id: 96, src: "/images/gallery/scholarship3.jpeg", category: "scholaship", tag: "Scholarships", title: "Educational Sponsorship Presentation", caption: "Supporting vulnerable youth with scholarship packages to guarantee classroom continuity." },
+  { id: 97, src: "/images/gallery/scholarship5.jpeg", category: "scholaship", tag: "Scholarships", title: "Student Sponsorship & Mentorship", caption: "Direct educational assistance and mentorship to help young scholars thrive and excel." },
 
   // 4. Clean Water Boreholes
   { id: 37, src: "/images/gallery/borehole.jpg", category: "borehole", tag: "Clean Water Boreholes", title: "Clean Water Flow Handover", caption: "Pure, uncontaminated drinking water flowing freely for community families." },
   { id: 38, src: "/images/gallery/borehole10.jpg", category: "borehole", tag: "Clean Water Boreholes", title: "Clean Water Borehole Donation Commissioning", caption: "Community celebration as fresh, potable drinking water flows from a newly donated borehole." },
+  { id: 93, src: "/images/gallery/borehole commission.jpeg", category: "borehole", tag: "Clean Water Boreholes", title: "Clean Water Borehole Commissioning", caption: "Community celebration, dedication, and commissioning as pure potable water flows from the newly installed borehole." },
   { id: 39, src: "/images/gallery/borehole19.jpg", category: "borehole", tag: "Clean Water Boreholes", title: "Community Water Infrastructure Donation", caption: "Completed deep-aquifer borehole facility donated to supply clean drinking water to hundreds of households." },
   { id: 40, src: "/images/gallery/borehole5.jpg", category: "borehole", tag: "Clean Water Boreholes", title: "Deep Borehole Drilling Operations", caption: "Heavy drilling machinery tapping deep groundwater aquifers for a remote Nigerian community." },
   { id: 41, src: "/images/gallery/borehole7.jpg", category: "borehole", tag: "Clean Water Boreholes", title: "Overhead Water Storage Installation", caption: "Overhead water storage tanks and distribution plumbing erected for village-wide access." },

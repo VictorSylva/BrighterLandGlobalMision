@@ -85,9 +85,6 @@ const Programs = () => {
                 >
                   <div className="blgm-deep-prog-visual">
                     <img src={prog.image} alt={prog.title} />
-                    <div className="blgm-deep-prog-badge">
-                      <i className="fa-solid fa-bookmark"></i> {prog.category}
-                    </div>
                   </div>
 
                   <div className="blgm-deep-prog-content">
